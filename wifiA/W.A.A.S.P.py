@@ -12,28 +12,28 @@ def destroy_processes():
 	os.system("sudo airmon-ng check kill")
 	os.system("clear")
 	
+	
 
 def enable_monitor_mode(adaptername):
 	print("Placing the card into monitor mode...")
 	os.system(f"sudo airmon-ng start {adaptername}")
 	print("Monitor mode enabled...")
 	os.system("clear")
-
-
-mon_adapter = adapter+"mon"
-
+	
 	
 def scout_networks(adaptername):
 	print("Showing all available networks")
 	try:
-		os.system(f"sudo airodump-ng {mon_adapter}")
+		os.system(f"sudo airodump-ng #Your cards name + mon#")
 	except KeyboardInterrupt:
 		pass
 		
 
+
+
 def packet_capture(Channel, bssID, adapterName):
 	try:
-		os.system(f"sudo airodump-ng -w outfile -c {Channel} --bssid {bssID} {mon_adapter}")
+		os.system(f"sudo airodump-ng -w outfile -c {Channel} --bssid {bssID} #Your cards name + mon#")
 	except Exception:
 		pass
 		
@@ -92,4 +92,4 @@ redundancy(channel, bssid, adapter)
 bruteforce(word1, word2)
 
 os.system("sudo rm outfile-01.cap outfile-01.csv outfile-01.kismet.csv outfile-01.kismet.netxml outfile-01.log.csv")
-os.system(f"sudo airmon-ng stop {mon_adapter}")
+os.system("sudo airmon-ng stop #Your cards name + mon#")

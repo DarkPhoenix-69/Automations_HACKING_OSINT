@@ -1,0 +1,12 @@
+For some perculiar reason, Python will not allow me to concatenate the adapter name and mon. As an alternative fix, in both deauth.py and W.A.A.S.P.py please replace all the '#Your cards name + mon#' with your adapter name suffixed by mon.
+I.e if the adapter name is abc2p, replace with abc2pmon.
+
+Additionally, to move on to the next stage when running W.A.A.S.P.py, press ctrl+c ONCE. This only applies when scouting for networks and attempting to capture handshakes. Basically all operations that use the airmon-ng programs.
+
+Inferrably, you will need to have python and airmon-ng. Optionally you may have two wordlists in the programs working directory, if the ones already included do not suffice. The program will ask you to provide the path to the wordlists.
+
+Remember to launch the Denial of Service Attack, after the handshake capture has begun.
+
+Finally, even though this text makes it seem complicated... The program makes life significantly easier once you have configured it properly. I have made an attempt to document it as well as possible. Please make sure to read WIFI.txt for more context.
+
+I do not condone Illegal Activities and wont be held liable for any problems you cause yourself.

